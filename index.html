@@ -1,16 +1,129 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página com Letras de Máquina de Escrever</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Pedro Souza's Blog</title>
+    <style>
+        body {
+            font-family: "Courier New", Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav .brand {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .blog-post {
+            border: 1px solid #ddd;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .blog-post-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .blog-post.open .blog-post-content {
+            display: block;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const posts = document.querySelectorAll('.blog-post');
+
+            posts.forEach(post => {
+                post.addEventListener('click', () => {
+                    post.classList.toggle('open');
+                });
+            });
+        });
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Minha Página com Letras de Máquina de Escrever</h1>
-        <p>Bem-vindo ao meu site! Este texto é exibido com a fonte de máquina de escrever.</p>
-        <p>Mais conteúdo pode ser adicionado aqui, e tudo ficará com o mesmo estilo!</p>
+    <nav>
+        <div class="brand">Pedro Souza</div>
+        <div class="links">
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <div class="blog-post">
+        <h2>Post Title 1</h2>
+        <div class="blog-post-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Fusce ut enim id mauris viverra aliquet.</p>
+        </div>
     </div>
+
+    <div class="blog-post">
+        <h2>Post Title 2</h2>
+        <div class="blog-post-content">
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+        </div>
+    </div>
+
+    <div class="blog-post">
+        <h2>Post Title 3</h2>
+        <div class="blog-post-content">
+            <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Follow me on:
+            <a href="#">Twitter</a> |
+            <a href="#">LinkedIn</a> |
+            <a href="#">GitHub</a>
+        </p>
+        <p>&copy; 2025 Pedro Souza. All rights reserved.</p>
+    </footer>
 </body>
 </html>
